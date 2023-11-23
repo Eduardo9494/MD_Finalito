@@ -23,5 +23,17 @@
     </div>
 </nav>
 
+<div class="container mt-4">
+    <h2>Registro de Asistencia</h2>
+    <form action="registrar_asistencia.php" method="POST">
+        <div class="form-group">
+            <label for="dni">DNI del Profesor:</label>
+            <input type="text" class="form-control" id="dni" name="dni" required>
+        </div>
+        <button type="submit" class="btn btn-primary" name="entrada">Registrar Entrada</button>
+        <button type="submit" class="btn btn-danger" name="salida">Registrar Salida</button>
+    </form>
+</div>
+
 </body>
 </html>
