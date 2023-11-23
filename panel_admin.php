@@ -36,6 +36,21 @@ $result = $conn->query($sql);
 </head>
 <body>
 
+<!-- admin.php -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.php">Control de Asistencia</a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="agregar_profesor.php">Agregar Profesor</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="ver_profesores.php">Ver Profesor</a>
+        </li>
+    </ul>
+</nav>
+
 
 </body>
 </html>
