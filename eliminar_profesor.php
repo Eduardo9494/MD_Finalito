@@ -20,4 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['dni'])) {
         echo "Error al eliminar al profesor: " . $conn->error;
     }
 }
+
+// Redirige de vuelta a la página de ver_profesores.php después de eliminar
+header("Location: ver_profesores.php");
 ?>
