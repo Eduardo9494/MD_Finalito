@@ -13,5 +13,7 @@ if ($usuario === $usuario_correcto && $contrasena === $contrasena_correcta) {
     $_SESSION['admin'] = true;
     header("Location: panel_admin.php"); // Redirige al panel de administración
 } else {
+    // Credenciales incorrectas, muestra un mensaje de error
+    header("Location: admin.php?error=1");
 }
 ?>
