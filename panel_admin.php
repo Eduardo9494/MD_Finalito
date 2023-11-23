@@ -51,6 +51,69 @@ $result = $conn->query($sql);
     </ul>
 </nav>
 
+<!-- ... (código anterior) ... -->
+
+<div class="container mt-4">
+    <h2>Panel del Administrador</h2>
+    <div class="form-group">
+        <label for="search">Buscar por DNI o Usuario:</label>
+        <input type="text" class="form-control" id="search" placeholder="Ingrese DNI o Usuario">
+        <button class="btn btn-primary mt-2" onclick="searchTable()">Buscar</button>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>DNI</th>
+                <th>Entrada</th>
+                <th>Salida</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row["id"] . "</td>";
+                    echo "<td>" . $row["dni"] . "</td>";
+                    echo "<td>" . $row["entrada"] . "</td>";
+                    echo "<td>" . $row["salida"] . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='4'>No se encontraron registros de asistencia.</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="admin.php">Cerrar Sesión</a>
+</div>
+
+<script>
+function searchTable() {
+    var input, filter, table, tr, td, i, j, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementsByTagName("table")[0];
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j]) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    break;
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+}
+</script>
+
 
 </body>
 </html>
