@@ -12,4 +12,12 @@ if ($conn->connect_error) {
 }
 if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['dni'])) {
     $dni = $_GET['dni'];
+    // Realiza la eliminación del profesor y sus datos
+    $sql = "DELETE FROM asistencia WHERE dni = '$dni'";
+    if ($conn->query($sql) === TRUE) {
+        echo "Profesor eliminado con éxito.";
+    } else {
+        echo "Error al eliminar al profesor: " . $conn->error;
+    }
+}
 ?>
