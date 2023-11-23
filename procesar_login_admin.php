@@ -9,6 +9,9 @@ $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 
 if ($usuario === $usuario_correcto && $contrasena === $contrasena_correcta) {
-    
+    // Credenciales correctas, iniciar sesión
+    $_SESSION['admin'] = true;
+    header("Location: panel_admin.php"); // Redirige al panel de administración
+} else {
 }
 ?>
