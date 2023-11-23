@@ -13,7 +13,21 @@
     <a class="navbar-brand" href="admin.php">Panel del Administrador</a>
 </nav>
 
-
+<div class="container mt-4">
+    <h2>Agregar Profesor</h2>
+    <form action="procesar_agregar_profesor.php" method="POST">
+        <div class="form-group">
+            <label for="nombre">Nombre del Profesor:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI del Profesor:</label>
+            <input type="text" class="form-control" id="dni" name="dni" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Profesor</button>
+        <a href="panel_admin.php" class="btn btn-secondary">Volver al panel de admin</a>
+    </form>
+</div>
 
 </body>
 </html>
